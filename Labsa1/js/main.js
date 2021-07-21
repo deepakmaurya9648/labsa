@@ -12,17 +12,21 @@ $(document).ready(function(){
       });
   
       $('.autoplay1').slick({
-        slidesToShow: 3,
-        slidesToScroll: 1,
+        slidesToShow:3,
         autoplay:false,
         autoplaySpeed: 2000,
-        centerPadding:'5px',
+        centerPadding:'0px',
         centerMode:true,
         arrows :true,
         prevArrow: '<img src="assets/icons/leftScroll.svg" class="prev" alt="">',
         nextArrow: '<img src="assets/icons/rightScroll.svg" class="next" alt="">'
       });
-      
+      $('.autoplay2').slick({
+        slidesToShow:4,
+        slidesToScroll:1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+      });
   });
 
   function scrollWin() {
@@ -50,6 +54,7 @@ function filterSelection(c) {
     w3RemoveClass(x[i], "show");
     if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
   }
+  
 }
 
 // Show filtered elements
@@ -78,12 +83,18 @@ function w3RemoveClass(element, name) {
 }
 
 // Add active class to the current button (highlight it)
-var btnContainer = document.getElementById("myBtnContainer");
-var btns = btnContainer.getElementsByClassName("btn");
+var header = document.getElementsByClassName("myBtnContainer");
+var btns = header[0].getElementsByClassName("btn");
 for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function(){
-    var current = document.getElementsByClassName("active");
-    current[0].className = current[0].className.replace("active", "");
-    this.className+="active";
+  btns[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("active");
+  current[0].className = current[0].className.replace(" active", "");
+  this.className += " active";
   });
+}
+
+
+// --------------javascript for favorite button---------------
+function favBtn(x){
+  x.classList.toggle("fas");
 }

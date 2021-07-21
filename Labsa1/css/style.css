@@ -334,15 +334,16 @@ nav .seller-btn{
     font-size:40px;
 }
 .banner-section-2 .autoplay1{
-    margin-top:40px;
+    margin-top:30px;
 }
 .banner-section-2 .slide{
-    margin:0 10px;
+    margin:0 40px;
     position: relative;
     transition:0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 .banner-section-2 .slick-active .slick-center,.banner-section-2 .slick-cloned, .banner-section-2 .slick-current{
 transition:0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+transform: scale(1.05);
 }
 .banner-section-2 .slide img {
     width: 100%;
@@ -441,16 +442,17 @@ transition:0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
     /* margin:40px 10px; */
 }
 
- .column{
+ /* .column{
     float: left;
     width:25%;
-}
+} */
 .column {
     float: left;
     width: 33.33%;
-    display: none; /* Hide columns by default */
+    display: none; 
+    margin-bottom: 30px;/* Hide columns by default */
   }
-  
+
   /* Clear floats after rows */
   .row:after {
     content: "";
@@ -508,15 +510,20 @@ margin-left: 0;
     top:5px;
     z-index: 9;
     background: #fff;
-    border-radius: 50%;
+    border-radius:100%;
     width:48px;
     height: 48px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.row .column .product-item .fav img{
-    width: 24px;
+.row .column .product-item .fav i{
+    cursor: pointer;
+    width: 20px;
+    transition:0.2s ease-out;
+}
+.row .column .product-item .fav .fas{
+    color: #ED4956;
 }
 .row .column .detail{
     display: flex;
@@ -619,22 +626,22 @@ margin-left: 0;
     font-size: 35px;
     margin-bottom: 60px;
 }
-.top-collection .product-area {
+/* .top-collection .product-area {
     display: flex;
     flex-wrap: wrap;
     align-items:stretch;
-    /* margin:40px 10px; */
-}
+    margin:40px 10px;
+} */
 .top-collection .product-area .product-card:first-child{
     margin-left: 0;
 }
 .top-collection .product-area .product-card:last-child{
     margin-right: 0;
 }
-.top-collection .product-area .product-card{
+/* .top-collection .product-area .product-card{
     flex:1 0 20%;
     margin:10px;
-}
+} */
 .top-collection .product-area .product-item img{
     width: 100%;
 }
