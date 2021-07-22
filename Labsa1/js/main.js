@@ -131,13 +131,14 @@ function showDropDown(evt,name) {
     megaBox[i].style.visibility= "hidden";
   }
   document.getElementById(name).style.visibility = "visible";
-  
 }
 
 document.addEventListener('mouseup', function(e) {
-  var container = document.querySelector('.mega-box');
-  if (!container.contains(e.target)) {
-      container.style.display = 'none';
+  let container = document.getElementsByClassName('mega-box');
+  for (i = 0; i < container.length; i++) {
+    if (!container[i].contains(e.target)) {
+      container[i].style.visibility = 'hidden';
+    }
   }
-  window.location.reload();
+  
 });
