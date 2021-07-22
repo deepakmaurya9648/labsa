@@ -27,6 +27,13 @@ $(document).ready(function(){
         autoplay: true,
         autoplaySpeed: 2000,
       });
+
+      // $("#open").click(function(){
+      //   $(".modal-container").addClass("active");
+      // });
+      // $("#close").click(function(){
+      //   $(".modal-container").css("transform","scale(0)");
+      // });
   });
 
   function scrollWin() {
@@ -98,3 +105,39 @@ for (var i = 0; i < btns.length; i++) {
 function favBtn(x){
   x.classList.toggle("fas");
 }
+
+
+//--------------------javascript for modal--------------//
+
+
+function openModal(evt,modalName) {
+  var i,btn, tablinks;
+  modal = document.getElementsByClassName("modal-container");
+  for (i = 0; i < modal.length; i++) {
+    modal[i].style.transform= "scale(0)";
+  }
+  document.getElementById(modalName).style.transform = "scale(1)";
+}
+
+function openClose(modalName) {
+  document.getElementById(modalName).style.transform = "scale(0)";
+  
+}
+// -------------------drop down ------------
+function showDropDown(evt,name) {
+  var i,btn, tablinks;
+  megaBox = document.getElementsByClassName("mega-box");
+  for (i = 0; i < megaBox.length; i++) {
+    megaBox[i].style.visibility= "hidden";
+  }
+  document.getElementById(name).style.visibility = "visible";
+  
+}
+
+document.addEventListener('mouseup', function(e) {
+  var container = document.querySelector('.mega-box');
+  if (!container.contains(e.target)) {
+      container.style.display = 'none';
+  }
+  window.location.reload();
+});
